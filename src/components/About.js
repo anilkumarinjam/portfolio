@@ -19,7 +19,7 @@ const About = () => {
   };
 
   // Store the full text including the date and time only once
-  const [fullText] = useState(` 
+  const [fullText] = useState(`
 <span class="welcome"> ${getCurrentDateTime()} </span>
 
 Hello! My name is Anil Kumar Injam.
