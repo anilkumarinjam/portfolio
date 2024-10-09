@@ -19,8 +19,8 @@ const About = () => {
   };
 
   // Store the full text including the date and time only once
-  const [fullText] = useState(` 
- <span class="welcome"> ${getCurrentDateTime()} </span>
+  const [fullText] = useState(`  
+<span class="welcome"> ${getCurrentDateTime()} </span>
 
 Hello! My name is Anil Kumar Injam.
 
@@ -28,7 +28,7 @@ I'm a Software Engineer with experience & strong foundation in <span class="high
 
 I'm graduating in Dec 2024 and am actively seeking a full-time software engineering position. I am always eager to explore new opportunities for learning and growth. Feel free to reach out to me if you have any questions or just want to connect!
 
-                                        <span class="welcome">Welcome to my portfolio!</span>
+                                              <span class="welcome">Welcome to my portfolio!</span>
 
 Change Directory to Navigate: 
 cd Home 
@@ -68,7 +68,7 @@ cd Contact
     if (e.key === 'Enter') {
       e.preventDefault(); // Prevent default behavior
       if (userInput === 'cd Home') {
-        window.location.href = '/';
+        window.location.href = '/my-portfolio';
       } else if (userInput === 'cd Projects') {
         window.location.href = '/projects';
       } else if (userInput === 'cd Contact') {
