@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="sidebar">
       <div className="initials-div">
-        AI
+        AKI
       </div>
       
       <div className="nav-links-container">
