@@ -19,6 +19,9 @@
     font-size: large;
     font-weight: 500;
   }
+  .red{
+    color:rgb(192, 63, 63);
+  }
   /* Terminal header with mac-style buttons */
   .terminal-header {
     display: flex;

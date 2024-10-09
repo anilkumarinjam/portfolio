@@ -19,16 +19,16 @@ const About = () => {
   };
 
   // Store the full text including the date and time only once
-  const [fullText] = useState(`  
+  const [fullText] = useState(` 
 <span class="welcome"> ${getCurrentDateTime()} </span>
 
 Hello! My name is Anil Kumar Injam.
 
 I'm a Software Engineer with experience & strong foundation in <span class="highlight">backend development</span>, <span class="highlight">cloud computing</span>, and <span class="highlight">data integration</span>. Demonstrated expertise in <span class="highlight">Java</span>, <span class="highlight">Python</span>, and <span class="highlight">Spring Boot</span>, with hands-on experience in developing scalable web applications and real-time communication systems. Passionate about leveraging technology to solve complex challenges and committed to continuous learning in emerging technologies.
 
-I'm graduating in Dec 2024 and am actively seeking a full-time software engineering position. I am always eager to explore new opportunities for learning and growth. Feel free to reach out to me if you have any questions or just want to connect!
+I'm graduating in Dec 2024 and am <span class="red">actively seeking a full-time software engineering position.</span> I am always eager to explore new opportunities for learning and growth. Feel free to reach out to me if you have any questions or just want to connect!
 
-                                              <span class="welcome">Welcome to my portfolio!</span>
+                                                <span class="welcome">Welcome to my portfolio!</span>
 
 Change Directory to Navigate: 
 cd Home 
