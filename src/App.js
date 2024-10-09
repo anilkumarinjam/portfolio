@@ -9,7 +9,7 @@ import './css/App.css';
 
 function App() {
   return (
-    <Router basename="/my-portfolio">
+    <Router>
       <Navbar />
       <div className="content-wrapper">
         <Routes>
