@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
       
       <div className="nav-links-container">
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/my-portfolio">
           <div className="icon"><FontAwesomeIcon icon={faHome} /></div>
           <span>Home</span>
         </Link>
