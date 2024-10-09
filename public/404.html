@@ -1,7 +1,5 @@
 <script type="text/javascript">
-    var pathname = window.location.pathname;
-    if (pathname !== '/') {
-      window.location.replace('/my-portfolio' + pathname);
-    }
+    var redirect = '/my-portfolio' + window.location.pathname;
+    window.location.replace(redirect);
   </script>
   
