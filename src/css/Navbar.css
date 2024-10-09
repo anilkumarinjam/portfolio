@@ -1,0 +1,80 @@
+.sidebar {
+    height: 97%;
+    border-radius: 25px;
+    width: 87px;
+    position: fixed;
+    top: 18px;
+    left: 10px;
+    background-color: #7a45f6;
+    transition: width 0.4s ease;
+    overflow: hidden;
+    display:flex;
+    flex-direction:column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar:hover {
+    width: 150px;
+  }
+  
+  .initials-div {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-weight:bolder;
+    color: white;
+  }
+  
+  .nav-links-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    width:auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #4c4a50da;
+  }
+  
+  .nav-link span {
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+  }
+  
+  .sidebar:hover .nav-link span {
+    opacity: 1;
+  }
+  
+  .icon {
+    font-size: 20px;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .scroll-arrow {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+  }
+  
