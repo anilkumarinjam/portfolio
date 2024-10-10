@@ -74,7 +74,7 @@ cd Contact
       } else if (userInput === 'cd Contact') {
         window.location.href = '/contact';
       } else {
-        alert('Please enter a valid Directory (cd Home, cd Projects, or cd Contact).');
+        alert('Please enter a valid Directory (cd Home, cd Projects, cd Contact)');
       }
       setUserInput(''); // Clear the input after submission
     }
