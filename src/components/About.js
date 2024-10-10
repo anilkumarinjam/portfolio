@@ -34,7 +34,7 @@ Change Directory to Navigate:
 cd Home 
 cd Projects 
 cd Contact
-(base) user@mac ~ %  `);
+(base) user@mac ~ %`);
 
   useEffect(() => {
     setDisplayedText('');
