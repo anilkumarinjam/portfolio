@@ -9,11 +9,11 @@ import './css/App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/my-portfolio">
       <Navbar />
       <div className="content-wrapper">
         <Routes>
-          <Route path="/my-portfolio" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
