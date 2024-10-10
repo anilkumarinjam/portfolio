@@ -68,7 +68,7 @@ cd Contact
     if (e.key === 'Enter') {
       e.preventDefault(); // Prevent default behavior
       if (userInput === 'cd Home') {
-        window.location.href = '/my-portfolio';
+        window.location.href = '/';
       } else if (userInput === 'cd Projects') {
         window.location.href = '/projects';
       } else if (userInput === 'cd Contact') {
