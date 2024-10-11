@@ -8,11 +8,11 @@ const Navbar = () => {
   return (
     <nav className="sidebar">
       <div className="initials-div">
-        AKI
+        AK
       </div>
       
       <div className="nav-links-container">
-        <Link className="nav-link" to="/my-portfolio">
+        <Link className="nav-link" to="/">
           <div className="icon"><FontAwesomeIcon icon={faHome} /></div>
           <span>Home</span>
         </Link>
@@ -29,8 +29,6 @@ const Navbar = () => {
           <span>Contact</span>
         </Link>
       </div>
-
-      
       <div className="scroll-arrow">
         <FontAwesomeIcon icon={faArrowDown} />
       </div>

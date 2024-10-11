@@ -10,12 +10,11 @@ const Home = () => {
       <motion.div className="profile-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 3 }}
       >
         <div className="image-container">
           <img src={profileImage} alt="Anil Kumar Injam" width="300" />
         </div>
-        
         <div className="text-content">
           <h1>HI THERE! I'M <span>Anil Kumar Injam</span></h1>
           <p>

@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 96.3vh;
+    height: 97vh;
     background-color: #e2e3f1ee;
     border-radius: 35px;
-    margin-left: -10px;
+    margin-left: -25px;
+    margin-top:-8px;
+    margin-right: -8px;
   }
   
   .profile-section {
@@ -27,7 +29,6 @@
     margin-right: 6rem;
     margin-left: 4rem;
   }
-  
   .text-content {
     flex: 1;
     text-align: left;
@@ -58,7 +59,7 @@
     text-decoration: none;
     font-size: 1rem;
     margin-right: 4rem;
-    cursor: pointer;
+    cursor:pointer;
     transition: background-color 0.3s, transform 0.3s;
   }
   
