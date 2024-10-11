@@ -83,4 +83,25 @@
     font-size: 24px;
     color: white;
   }
-  
+  .menu-icon{
+    display: none;
+  }
+  /* Media Query for small screens */
+@media (max-width: 768px) {
+  .nav-links-container {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Show the hamburger menu icon */
+  .menu-icon {
+    display: block;
+    color: white;
+  }
+}
