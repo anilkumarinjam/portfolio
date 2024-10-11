@@ -12,12 +12,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sidebar">
+    <nav className={`sidebar ${menuVisible ? 'show' : ''}`}>
       <div className="initials-div">
         AK
       </div>
 
-      <div className={`nav-links-container ${menuVisible ? 'show' : ''}`}>
+      <div className="nav-links-container">
         <Link className="nav-link" to="/">
           <div className="icon"><FontAwesomeIcon icon={faHome} /></div>
           <span>Home</span>

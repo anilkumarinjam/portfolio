@@ -95,11 +95,14 @@
 
 /* Media Query for small screens */
 @media (max-width: 768px) {
-  .nav-links-container {
+  .sidebar {
     display: none; /* Hidden on small screens */
   }
 
-  .nav-links-container.show {
+  .menu-icon {
+    display: flex;
+  }
+  .sidebar.show {
     display: flex; /* Show when the menu is toggled */
   }
 }
