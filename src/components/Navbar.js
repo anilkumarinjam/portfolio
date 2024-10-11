@@ -12,6 +12,7 @@ const Navbar = () => {
   };
 
   return (
+    <div className="side">
     <nav className={`sidebar ${menuVisible ? 'show' : ''}`}>
       <div className="initials-div">
         AK
@@ -39,12 +40,10 @@ const Navbar = () => {
       <div className="scroll-arrow">
         <FontAwesomeIcon icon={faArrowDown} />
       </div>
-
-      {/* Toggle button */}
-      <div className="menu-icon" onClick={toggleMenu}>
-        &#9776;
-      </div>
     </nav>
+      {/* Toggle button */}
+      <div className="menu-icon" onClick={toggleMenu}>&#9776;</div>
+    </div>
   );
 };
 

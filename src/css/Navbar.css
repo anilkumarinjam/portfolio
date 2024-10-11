@@ -98,9 +98,8 @@
   .sidebar {
     display: none; /* Hidden on small screens */
   }
-
   .menu-icon {
-    display: flex;
+    display: block;
   }
   .sidebar.show {
     display: flex; /* Show when the menu is toggled */
