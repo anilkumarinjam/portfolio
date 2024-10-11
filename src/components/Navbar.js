@@ -17,7 +17,7 @@ const Navbar = () => {
         AK
       </div>
 
-      <div className={`nav-links-container ${menuVisible ? 'visible' : ''}`}>
+      <div className={`nav-links-container ${menuVisible ? 'show' : ''}`}>
         <Link className="nav-link" to="/">
           <div className="icon"><FontAwesomeIcon icon={faHome} /></div>
           <span>Home</span>
