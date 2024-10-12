@@ -1,107 +1,86 @@
 .sidebar {
-  height: 99vh; 
-  border-radius: 25px;
-  width: 87px;
-  position: fixed;
-  top: 5px;
-  left: 7px;
-  background-color: #7a45f6;
-  transition: width 0.4s ease;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar:hover {
-  width: 150px;
-}
-
-.initials-div {
-  width: 100%;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 34px;
-  font-weight: bolder;
-  color: white;
-  background-color: rgb(103, 79, 209);
-}
-
-.nav-links-container {
-  flex-grow: 1;
-  display: flex; /* Initially hidden */
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Show the navbar links when the menu is active */
-.nav-links-container.show {
-  display: flex; /* Show links when toggled */
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  width: auto;
-  padding: 14px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  transition: background-color 0.2s ease;
-  border-radius: 15px;
-}
-
-.nav-link:hover {
-  background-color: #4c4a50da;
-  padding-left: 20px;
-  font-size: large;
-  color: rgba(201, 194, 202, 0.376);
-  font-weight: bolder;
-}
-
-.nav-link span {
-  margin-left: 10px;
-  opacity: 0;
-  transition: opacity 0.9s ease;
-}
-
-.sidebar:hover .nav-link span {
-  opacity: 1;
-}
-
-.icon {
-  font-size: 20px;
-  min-width: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.scroll-arrow {
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: white;
-}
-
-.menu-icon {
-  display: none;
-}
-
-/* Media Query for small screens */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none; /* Hidden on small screens */
+    height: 99vh; 
+    border-radius: 25px;
+    width: 87px;
+    position: fixed;
+    top: 5px;
+    left: 7px;
+    background-color: #7a45f6;
+    transition: width 0.4s ease;
+    overflow: hidden;
+    display:flex;
+    flex-direction:column-reverse;
+    align-items: center;
+    justify-content:center;
   }
-  .menu-icon {
-    display: block;
+  
+  .sidebar:hover {
+    width: 150px;
   }
-  .sidebar.show {
-    display: flex; /* Show when the menu is toggled */
+  
+  .initials-div {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-weight:bolder;
+    color: white;
+    background-color: rgb(103, 79, 209);
   }
-}
+  
+  .nav-links-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    width:auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.2s ease;
+    border-radius: 15px;
+  }
+  
+  .nav-link:hover {
+    background-color: #4c4a50da;
+    padding-left: 20px;
+    font-size:large;
+    color: rgba(201, 194, 202, 0.376);
+    font-weight: bolder;
+  }
+  
+  .nav-link span {
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+  }
+  
+  .sidebar:hover .nav-link span {
+    opacity: 1;
+  }
+  
+  .icon {
+    font-size: 20px;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .scroll-arrow {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+  }
+  

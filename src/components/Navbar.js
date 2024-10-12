@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faProjectDiagram, faEnvelope, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import '../css/Navbar.css';
 
 const Navbar = () => {
-  const [menuVisible, setMenuVisible] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
-  };
-
   return (
-    <div className="side">
-    <nav className={`sidebar ${menuVisible ? 'show' : ''}`}>
+    <nav className="sidebar">
       <div className="initials-div">
         AK
       </div>
-
+      
       <div className="nav-links-container">
         <Link className="nav-link" to="/">
           <div className="icon"><FontAwesomeIcon icon={faHome} /></div>
@@ -36,14 +29,10 @@ const Navbar = () => {
           <span>Contact</span>
         </Link>
       </div>
-
       <div className="scroll-arrow">
         <FontAwesomeIcon icon={faArrowDown} />
       </div>
     </nav>
-      {/* Toggle button */}
-      <div className="menu-icon" onClick={toggleMenu}>&#9776;</div>
-    </div>
   );
 };
 
