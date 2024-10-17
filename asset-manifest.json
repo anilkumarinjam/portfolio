@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.0fb35a56.css",
-    "main.js": "/static/js/main.9a8d7a91.js",
+    "main.js": "/static/js/main.5d1e2dbe.js",
     "static/media/ai.png": "/static/media/ai.c9769548abea3ec9ddaa.png",
     "static/media/Anil_Resume_Dev.pdf": "/static/media/Anil_Resume_Dev.a5ee9d13e86566e3d1e9.pdf",
     "index.html": "/index.html",
     "main.0fb35a56.css.map": "/static/css/main.0fb35a56.css.map",
-    "main.9a8d7a91.js.map": "/static/js/main.9a8d7a91.js.map"
+    "main.5d1e2dbe.js.map": "/static/js/main.5d1e2dbe.js.map"
   },
   "entrypoints": [
     "static/css/main.0fb35a56.css",
-    "static/js/main.9a8d7a91.js"
+    "static/js/main.5d1e2dbe.js"
   ]
 }
