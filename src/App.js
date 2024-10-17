@@ -9,7 +9,7 @@ import './css/App.css';
 import './css/globals.css';
 function App() {
   return (
-    <Router basename="/my-portfolio">
+    <Router >
       <Navbar />
       <div className="content-wrapper">
         <Routes>
