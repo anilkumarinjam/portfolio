@@ -1,7 +1,7 @@
 /* Hamburger and X icon styles with animation */
 .menu-icon {
   cursor: pointer;
-  color: rgb(103, 79, 209);
+  color: #773ec2;
   font-size: 40px;
   position: fixed;
   top: 40px;
@@ -14,7 +14,6 @@
   transform: rotate(90deg); /* Rotate when open */
   color: aliceblue;
 }
-
 /* Hide the sidebar by default */
 .sidebar {
   height: 99vh;
@@ -23,7 +22,7 @@
   position: fixed;
   top: 5px;
   left: 7px;
-  background-color: #7a45f6;
+  background-color: #8057e0;
   transition: width 0.4s ease;
   overflow: hidden;
   display: flex;
