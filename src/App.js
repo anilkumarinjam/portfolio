@@ -1,6 +1,6 @@
 import React from 'react';
 // import { HashRouter as Router } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Navbar />
       <div className="content-wrapper">
-        <Routes>
+        <Routes basename='portfolio'>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
