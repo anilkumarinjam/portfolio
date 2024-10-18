@@ -8,7 +8,6 @@ export const TextRevealByWord = ({ text, className }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
 
-  // Ensure text is a string; if not, default to an empty string
   const words = (typeof text === "string" ? text : "").split(" ");
 
   return (
@@ -32,13 +31,12 @@ export const TextRevealByWord = ({ text, className }) => {
 };
 
 const Word = ({ children, progress, range }) => {
-  // Change the opacity transformation to start from 0 to 1
   const opacity = useTransform(progress, range, [0, 1]);
 
   return (
     <motion.span
       style={{ opacity }}
-      className="relative mx-1 lg:mx-2.5 font-bold text-blue-800 dark:text-gray-300"
+      className="relative mx-1 lg:mx-2.5 font-bold bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent"
     >
       {children}
     </motion.span>
