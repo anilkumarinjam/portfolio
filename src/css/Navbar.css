@@ -1,7 +1,7 @@
 /* Hamburger and X icon styles with animation */
 .menu-icon {
   cursor: pointer;
-  color: #773ec2;
+  color: #c5b1d9;
   font-size: 40px;
   position: fixed;
   top: 40px;
@@ -17,13 +17,14 @@
 }
 /* Hide the sidebar by default */
 .sidebar {
-  height: 99vh;
-  border-radius: 25px;
+  height: 100vh;
+  /* border-radius: 25px; */
   width: 87px;
   position: fixed;
-  top: 5px;
-  left: 7px;
-  background-color: #8057e0;
+  /* top: 5px; */
+  left: 1px;
+  /* background-color: #8057e0; */
+  background: linear-gradient(to bottom,#271286, #1f4564,#9b6bd7);
   transition: width 0.4s ease;
   overflow: hidden;
   display: flex;

@@ -5,14 +5,14 @@
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  background: linear-gradient(to bottom,#e987e9, #9974d0); 
+  /* background: #9974d0; */
 }
-.full-screen-section {
+/* .full-screen-section {
   background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0); 
   height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  flex-direction: column; /* Adjust as necessary for your layout */
-}
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: column; 
+} */

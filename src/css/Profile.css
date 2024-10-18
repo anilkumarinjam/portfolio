@@ -1,13 +1,18 @@
 /* Profile Section */
 .profile-section {
+    z-index: 9999;
     display: flex;
-    align-items: center;
-    max-width: 1200px;
+    align-items:center;
+    /* max-width: 1200px; */
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 2rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
+    height: 100vh;
+    width: 100vw;
+    padding-left: 20rem;
+    background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0); 
   }
   
   .image-container {

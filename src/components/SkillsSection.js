@@ -1,6 +1,7 @@
 // Skills.js
 import IconCloud from "./magicui/IconCloud";
 import "../css/skills.css"; // Import the updated CSS file
+import TextRevealByWord from './magicui/TextRevealByWord';
 
 const slugs = [
   "javascript",
@@ -27,20 +28,12 @@ const slugs = [
 export default function Skills() {
   return (
     <div className="skills-container">
-      <div className="icon-cloud">
-        <IconCloud iconSlugs={slugs} />
+        <TextRevealByWord text={"Check out my skills" }/>
+    {/* <h2 className="skills-header">Check out my skills</h2> */}
+      <div className="skills">
+        <div className="icon-cloud">
       </div>
-      <div className="skills-list">
-        {slugs.map((slug) => (
-          <div className="skill-item" key={slug}>
-            <img
-              className="skill-icon"
-              src={`path_to_icons/${slug}.png`} // Update this to your icon path
-              alt={slug}
-            />
-            <span>{slug.charAt(0).toUpperCase() + slug.slice(1)}</span>
-          </div>
-        ))}
+        <IconCloud iconSlugs={slugs} />
       </div>
     </div>
   );

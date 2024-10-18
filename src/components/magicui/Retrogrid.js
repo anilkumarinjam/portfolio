@@ -1,11 +1,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-export default function RetroGrid({ className, angle = 65 }) {
+export default function RetroGrid({ className, angle = 45 }) {
   return (
     <div
       className={cn(
-        "pointer-events-none absolute size-full overflow-hidden opacity-70 [perspective:200px]",
+        "pointer-events-none absolute size-full overflow-hidden opacity-40 [perspective:200px]",
         className
       )}
       style={{ "--grid-angle": `${angle}deg` }}
@@ -19,7 +19,7 @@ export default function RetroGrid({ className, angle = 65 }) {
             // Light styles
             "[background-image:linear-gradient(to_right,rgba(0,0,0,0.3)_1px,transparent_0),linear-gradient(to_bottom,rgba(0,0,0,0.3)_1px,transparent_0)]",
             // Dark styles
-            "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_0)]"
+            // "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_0)]"
           )}
         />
       </div>

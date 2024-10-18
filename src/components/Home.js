@@ -10,15 +10,14 @@ const Home = () => {
       className="home-container"
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
-      transition={{ duration: 2 }}
-    >
-      <div className="full-screen-section">
-
-      <Retrogrid />
+      transition={{ duration: 2 }}>
+      
+      <div className="">
+        <Retrogrid />
         <ProfileSection />
       </div>
 
-      <div className="full-screen-section">
+      <div className="">
         <SkillsSection />
       </div>
     </motion.div>
