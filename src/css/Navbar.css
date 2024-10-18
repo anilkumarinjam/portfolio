@@ -8,6 +8,7 @@
   left: 35px;
   z-index: 100;
   transition: transform 0.4s ease;
+  z-index: 9999;
 }
 
 .menu-icon.open {
@@ -29,6 +30,7 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  z-index: 9998; 
 }
 
 /* Expands the sidebar on hover */
