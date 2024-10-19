@@ -12,9 +12,10 @@
     height: 100vh;
     width: 100vw;
     padding-left: 20rem;
-    background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0); 
+    background: linear-gradient(to bottom, #031d49, #3c075b, #4f23a0, #ccb6cc, #9974d0); 
   }
-  
+  /* background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0);  */
+
   .image-container {
     border-radius: 50%;
     overflow: hidden;

@@ -16,10 +16,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, #c4bfcd, #e987e9, #6841b1, #414caf, #2b3790);
+    background: linear-gradient(to bottom, #05243c, #190119, #24045f, #530578, #2b3790);
     opacity: 1; /* Adjust the opacity of the gradient */
     z-index: 0; /* Send it to the back */
 }
+/* background: linear-gradient(to bottom, #c4bfcd, #e987e9, #6841b1, #414caf, #2b3790); */
 
 .skills-content {
     position: relative; /* Keep the text above the background */
