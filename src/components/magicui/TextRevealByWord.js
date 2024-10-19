@@ -12,14 +12,15 @@ export const TextRevealByWord = ({ text, className }) => {
 
   return (
     <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
-      <div className="sticky top-0 mx-auto flex h-[50%] max-w-4xl items-center bg-transparent px-[1rem] py-[5rem]">
-        <p className="flex flex-wrap p-5 text-2xl font-bold text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl">
+      <div className="sticky top-0 flex h-[40vh] max-w-4xl items-center bg-transparent px-[1rem] py-5">
+        <p className="flex flex-wrap text-2xl font-bold text-black/20 dark:text-white/20 md:text-3xl lg:text-4xl xl:text-5xl">
           {words.map((word, i) => {
-            const start = i / words.length;
-            const end = start + 1 / words.length;
+            // Adjust start and end for better transition timing
+            const start = i / words.length; // Start the current word's transition
+            const end = (i + 1) / words.length; // End the current word's transition
 
             return (
-              <Word key={i} progress={scrollYProgress} range={[end, start]}>
+              <Word key={i} progress={scrollYProgress} range={[start, end]}>
                 {word}
               </Word>
             );
@@ -31,6 +32,7 @@ export const TextRevealByWord = ({ text, className }) => {
 };
 
 const Word = ({ children, progress, range }) => {
+  // Use the scroll progress to determine opacity
   const opacity = useTransform(progress, range, [0, 1]);
 
   return (

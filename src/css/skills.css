@@ -1,106 +1,96 @@
 .skills-container {
-    position: relative; /* Position for the absolute child */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    height: 70vh; /* Adjust height as needed */
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .skills-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2; /* Ensure content is above the background */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+  }
+  
+  .icon-cloud {
+    flex: 1;
+    max-width: 50%; /* Adjust to make space for the text on the right */
+    margin-top: 0;
+    margin-left: 350px; /* Adjust spacing as needed */
+    position: relative; /* Ensure it has a proper stacking context */
+    z-index: 1; /* Ensure the icon cloud is above the background but below content */
+  }
+  
+  .skills-header {
+    z-index: 3; /* Ensure header is above everything */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 40px;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden; /* Prevents scrollbars */
-}
-
-.skills-background {
-    position: absolute; /* Overlay positioning */
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 4rem; /* Adjust font size as needed */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 2s ease;
+    font-weight: bold; /* Make the font bold */
+    background: linear-gradient(to right, #f00, #00f); /* Apply gradient from red to blue */
+    -webkit-background-clip: text; /* Make background clip to text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent for gradient effect */
+  }
+  
+  
+  .skills-header.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .skills-background {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, #05243c, #190119, #24045f, #530578, #2b3790);
-    opacity: 1; /* Adjust the opacity of the gradient */
-    z-index: 0; /* Send it to the back */
-}
-/* background: linear-gradient(to bottom, #c4bfcd, #e987e9, #6841b1, #414caf, #2b3790); */
-
-.skills-content {
-    position: relative; /* Keep the text above the background */
-    z-index: 1; /* Bring it to the front */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    height: 100vh;
-}
-
-.icon-cloud {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    margin-top: -200px;
-}
-
-.animated-list {
-    overflow: hidden; 
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust height to fill available space */
-}
-
-.skill-item {
+    opacity: 1;
+    z-index: 0; /* Keep background behind everything */
+    display: block;
+  }
+  
+  .skill-background-text {
+    position: absolute;
     font-size: 1.5rem;
-    color: black; /* Black text color */
-    background-color: white; /* White background */
-    padding: 10px 20px;
-    border-radius: 12px; /* Rounded corners */
-    margin: 5px 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
-    cursor: pointer;
+    color: rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    pointer-events: none;
+    animation: float 30s infinite;
     opacity: 0;
-    animation: fadeInUp 0.5s forwards; /* Fade-in animation */
-}
-
-.skill-item:nth-child(1) {
-    animation-delay: 0.3s;
-}
-.skill-item:nth-child(2) {
-    animation-delay: 0.6s;
-}
-.skill-item:nth-child(3) {
-    animation-delay: 0.9s;
-}
-.skill-item:nth-child(4) {
-    animation-delay: 1.2s;
-}
-/* Adjust delays for each subsequent item */
-
-.skill-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-.skill-icon {
-    font-size: 2rem;
-    margin-right: 10px;
-    color: #000; /* Adjust icon color */
-}
-
-@keyframes fadeInUp {
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .skill-background-text.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes float {
     0% {
-        opacity: 0;
-        transform: translateY(20px); /* Start with slight upward translation */
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
     }
     100% {
-        opacity: 1;
-        transform: translateY(0); /* End at normal position */
+      transform: translateY(20px);
     }
-}
+  }
+  
