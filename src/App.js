@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Navbar />
       <div className="content-wrapper">
-        <Routes basename='portfolio'>
+        <Routes basename="portfolio">
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
