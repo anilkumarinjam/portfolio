@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  /* background: #9974d0; */
+  background: linear-gradient(to right, #090909, #310613);
 }
 /* .full-screen-section {
   background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0); 

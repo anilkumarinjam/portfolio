@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import Retrogrid from "./magicui/Retrogrid";
+import Safari from "./magicui/Safari";
 import ProfileSection from './ProfileSection.js';
 import SkillsSection from './SkillsSection.js';
+import Projects from './Projects.js';
 import '../css/Home.css';
+import '../css/Projects.css';
 
 const Home = () => {
   return (
@@ -10,15 +13,20 @@ const Home = () => {
       className="home-container"
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
-      transition={{ duration: 2 }}>
-      
-      <div className="">
+      transition={{ duration: 2 }}
+    >
+      <div>
         <Retrogrid />
         <ProfileSection />
       </div>
 
-      <div className="">
+      <div>
         <SkillsSection />
+      </div>
+
+      <div className="overlay-container">
+        <Safari url="anilkumarinjam.github.io" />
+        <Projects />
       </div>
     </motion.div>
   );
