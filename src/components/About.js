@@ -4,9 +4,12 @@ import '../css/About.css';
 const About = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [userInput, setUserInput] = useState('');
+  const [isVisible, setIsVisible] = useState(false); // Track visibility
+  const [hasTyped, setHasTyped] = useState(false); // Track if typing is complete
   const indexRef = useRef(0);
   const timeoutRef = useRef(null);
   const inputRef = useRef(null);
+  const sectionRef = useRef(null); // Ref for the About section
 
   // Function to get formatted date and time
   const getCurrentDateTime = () => {
@@ -31,22 +34,26 @@ I'm graduating in Dec 2024 and am <span class="red">actively seeking a full-time
                                                 <span class="welcome">Welcome to my portfolio!</span>
 
 Change Directory to Navigate: 
-cd Home 
-cd Projects 
-cd Contact
+cd Home
+cd Skills
+cd Projects
 (base) user@mac ~ % `);
 
+  // Typing effect
   useEffect(() => {
+    if (!isVisible || hasTyped) return; // Only start typing when the section is visible and typing has not already happened
+
     setDisplayedText('');
     indexRef.current = 0;
-
     const typingSpeed = 3; // Adjust the typing speed if necessary
 
     const typeText = () => {
-      if (indexRef.current < fullText.length-1) {
+      if (indexRef.current < fullText.length - 1) {
         setDisplayedText((prev) => prev + fullText[indexRef.current]);
         indexRef.current++;
         timeoutRef.current = setTimeout(typeText, typingSpeed);
+      } else {
+        setHasTyped(true); // Set typing complete after it's done
       }
     };
 
@@ -55,26 +62,46 @@ cd Contact
     return () => {
       clearTimeout(timeoutRef.current);
     };
-  }, [fullText]);
+  }, [fullText, isVisible, hasTyped]);
 
+  // Intersection Observer to detect when About section is visible
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus(); // Automatically focus the input area
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisible(entry.isIntersecting); // Set isVisible based on visibility
+
+        // Conditionally focus on the input only when the About section is visible
+        if (entry.isIntersecting && inputRef.current) {
+          inputRef.current.focus();
+        }
+      },
+      { threshold: 0.5 } // Adjust this value as needed (50% visibility)
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   // Function to handle user input with Enter key navigation
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault(); // Prevent default behavior
-      if (userInput === 'cd Home') {
-        window.location.href = '/my-portfolio';
-      } else if (userInput === 'cd Projects') {
-        window.location.href = '/projects';
-      } else if (userInput === 'cd Contact') {
-        window.location.href = '/contact';
+      if (userInput === 'cd Home' || userInput === 'cd home') {
+        document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
+      } else if (userInput === 'cd Skills' || userInput === 'cd skills') {
+        document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+      } else if (userInput === 'cd Projects' || userInput === 'cd projects') {
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
       } else {
-        alert('Please enter a valid Directory (cd Home, cd Projects, cd Contact)');
+        alert('Please enter a valid Directory (cd Home, cd Skills, cd Projects)');
       }
       setUserInput(''); // Clear the input after submission
     }
@@ -99,46 +126,46 @@ cd Contact
   };
 
   return (
-    <div className='back'>
-    <div className="terminal">
-      <div className="terminal-header">
-        <div className="buttons">
-          <span className="close-btn"></span>
-          <span className="minimize-btn"></span>
-          <span className="maximize-btn"></span>
-        </div>
-        <div className="terminal-title">About - zsh - 80 x 24</div>
-      </div>
-      <div className="terminal-body">
-        <pre dangerouslySetInnerHTML={{ __html: displayedText.trim() }} />
-        <div style={{ display: 'inline', position: 'relative' }}>
-          <div
-            ref={inputRef}
-            className="input-line"
-            contentEditable
-            suppressContentEditableWarning
-            tabIndex={0}
-            onKeyDown={(e) => {
-              handleKeyDown(e);
-              handleBackspace(e);
-            }}
-            onInput={handleInputChange}
-            onKeyPress={handleKeyPress}
-            style={{
-              outline: 'none',
-              display: 'inline',
-              position: 'relative',
-              caretColor: 'transparent', // Hide the default caret
-              whiteSpace: 'nowrap', // Prevent text wrapping
-              overflowWrap: 'normal', // Prevent breaking words
-            }}
-          >
-            {userInput}
+    <div className='back' ref={sectionRef}> {/* Apply the sectionRef to this div */}
+      <div className="terminal">
+        <div className="terminal-header">
+          <div className="buttons">
+            <span className="close-btn"></span>
+            <span className="minimize-btn"></span>
+            <span className="maximize-btn"></span>
           </div>
-          <span className="cursor"></span> {/* Custom blinking cursor */}
+          <div className="terminal-title">About - zsh - 80 x 24</div>
+        </div>
+        <div className="terminal-body">
+          <pre dangerouslySetInnerHTML={{ __html: displayedText.trim() }} />
+          <div style={{ display: 'inline', position: 'relative' }}>
+            <div
+              ref={inputRef}
+              className="input-line"
+              contentEditable
+              suppressContentEditableWarning
+              tabIndex={0}
+              onKeyDown={(e) => {
+                handleKeyDown(e);
+                handleBackspace(e);
+              }}
+              onInput={handleInputChange}
+              onKeyPress={handleKeyPress}
+              style={{
+                outline: 'none',
+                display: 'inline',
+                position: 'relative',
+                caretColor: 'transparent', // Hide the default caret
+                whiteSpace: 'nowrap', // Prevent text wrapping
+                overflowWrap: 'normal', // Prevent breaking words
+              }}
+            >
+              {userInput}
+            </div>
+            <span className="cursor"></span> {/* Custom blinking cursor */}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -3,16 +3,13 @@
   display: flex;
   flex-direction: column; 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;;
   overflow-x: hidden;
   background: linear-gradient(to right, #090909, #310613);
 }
-/* .full-screen-section {
-  background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0); 
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  flex-direction: column; 
-} */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}

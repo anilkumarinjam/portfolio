@@ -32,14 +32,14 @@ const Navbar = () => {
         <nav className="sidebar">
           <div className="initials-div">AK</div>
           <div className="nav-links-container">
-          <Link className="nav-link" to="/portfolio" onClick={() => setMenuVisible(false)}>
+            <a className="nav-link" href="#profile" onClick={() => setMenuVisible(false)}>
               <div className="icon"><FontAwesomeIcon icon={faHome} /></div>
               <span>Home</span>
-              </Link>
-            <Link className="nav-link" to="/about" onClick={() => setMenuVisible(false)}>
+            </a>
+            <a className="nav-link" href="#about" onClick={() => setMenuVisible(false)}>
               <div className="icon"><FontAwesomeIcon icon={faUser} /></div>
               <span>About</span>
-            </Link>
+            </a>
             <a className="nav-link" href="#skills" onClick={() => setMenuVisible(false)}>
               <div className="icon"><FontAwesomeIcon icon={faEnvelope} /></div>
               <span>Skills</span>
