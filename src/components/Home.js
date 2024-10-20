@@ -15,16 +15,16 @@ const Home = () => {
       animate={{ opacity: 1 }} 
       transition={{ duration: 2 }}
     >
-      <div>
+      <div id='profile'>
         <Retrogrid />
         <ProfileSection />
       </div>
 
-      <div>
+      <div id='skills'>
         <SkillsSection />
       </div>
 
-      <div className="overlay-container">
+      <div className="overlay-container" id="projects">
         <Safari url="anilkumarinjam.github.io" />
         <Projects />
       </div>

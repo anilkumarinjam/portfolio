@@ -99,6 +99,7 @@ cd Contact
   };
 
   return (
+    <div className='back'>
     <div className="terminal">
       <div className="terminal-header">
         <div className="buttons">
@@ -137,6 +138,7 @@ cd Contact
           <span className="cursor"></span> {/* Custom blinking cursor */}
         </div>
       </div>
+    </div>
     </div>
   );
 };

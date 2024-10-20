@@ -11,8 +11,9 @@
     /* margin-bottom: 3rem; */
     height: 100vh;
     width: 100vw;
-    padding-left: 20rem;
+    padding-left: 15rem;
     background: linear-gradient(to bottom, #031d49, #3c075b, #4f23a0, #ccb6cc, #9974d0); 
+    background: linear-gradient(to right, #9974d0,#c7c7eb, #d8bfd8);
   }
   /* background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0);  */
 
@@ -43,7 +44,7 @@
   
   .text-content p {
     font-size: 1.2rem;
-    color: #8da7bd;
+    color: #905cd3;
     margin-bottom: 1.5rem;
   }
   
