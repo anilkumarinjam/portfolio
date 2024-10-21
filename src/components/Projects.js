@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import '../css/Projects.css';
 import chat from '../assets/chat.png';
-import image from '../assets/image.png';
+import image from '../assets/task.png';
 import api from '../assets/api.png';
 
 const projects = [
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "Course Blend",
-    description: "An API interface allowing comprehensive management of student course records. Leveraged Spring's Rest services to ensure seamless communication and interaction with the API",
+    description: "An API interface allowing comprehensive management of course records. Leveraged Spring's Rest services to ensure seamless communication and interaction with the API",
     viewLink: "https://github.com/anilkumarinjam/Projects",
     codeLink: "https://github.com/anilkumarinjam/Projects",
     imageUrl: api,
@@ -42,20 +42,23 @@ const Projects = () => {
         }
       },
       {
-        threshold: 0.3, // Adjust threshold as needed
+        threshold: 0.6, // Adjust threshold as needed
       }
     );
-
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
+  
+    const currentProjectsRef = projectsRef.current; // Copy ref value
+  
+    if (currentProjectsRef) {
+      observer.observe(currentProjectsRef);
     }
-
+  
     return () => {
-      if (projectsRef.current) {
-        observer.unobserve(projectsRef.current);
+      if (currentProjectsRef) { // Use the copied value in cleanup
+        observer.unobserve(currentProjectsRef);
       }
     };
   }, []);
+  
 
   return (
     <motion.section
@@ -63,8 +66,7 @@ const Projects = () => {
       className="projects-container"
       ref={projectsRef}
       initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
-    >
+      animate={isVisible ? "visible" : "hidden"}>
       <h2>Projects</h2>
       <div className="projects-grid">
         {projects.map((project, index) => (
@@ -80,8 +82,8 @@ const Projects = () => {
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className='buttons-container'>
-                <a href={project.viewLink} className="view-button">View</a>
-                <a href={project.codeLink} className="code-button">Code</a>
+                <a href={project.viewLink} className="view-button" target='_blank' rel="noreferrer">View</a>
+                <a href={project.codeLink} className="code-button" target='_blank' rel="noreferrer">Code</a>
               </div>
             </div>
           </motion.div>

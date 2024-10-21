@@ -5,6 +5,7 @@ import ProfileSection from './ProfileSection.js';
 import SkillsSection from './SkillsSection.js';
 import About from './About.js';
 import Projects from './Projects.js';
+import Footer from './Footer.js';
 import '../css/Home.css';
 import '../css/Projects.css';
 
@@ -32,6 +33,7 @@ const Home = () => {
         <Safari url="anilkumarinjam.github.io" />
         <Projects />
       </div>
+      <Footer />
     </motion.div>
   );
 };

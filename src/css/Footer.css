@@ -1,0 +1,53 @@
+/* Footer styles */
+.footer {
+    width: 100%;
+    height: 100px; /* Adjust the height as per your preference */
+    background: linear-gradient(to right, #e6e6fa, #d8bfd8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Increase the gap for more space between the items */
+  }
+  
+  .footer-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center; /* Aligns text with arrow */
+  }
+  
+  .footer-link:hover {
+    color: #ec6409; /* Change to any hover color you like */
+    transform: scale(1.1);
+  }
+  
+  .arrow-icon {
+    margin-left: 5px; /* Add space between "Back to top" and the arrow icon */
+  }
+  
+  .footer-icon {
+    font-size: 20px;
+    color: #6a0dad;
+    transition: color 0.3s;
+  }
+  
+  .footer-icon:hover {
+    color: #e31220;
+    transform: scale(1.3);
+  }
+  
+  .footer-name {
+    font-size: 12px;
+    margin-top: 10px; /* Added extra margin for spacing between the name and content */
+    color: #6e33c1;
+  }
+  

@@ -4,12 +4,12 @@ import '../css/About.css';
 const About = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [userInput, setUserInput] = useState('');
-  const [isVisible, setIsVisible] = useState(false); // Track visibility
-  const [hasTyped, setHasTyped] = useState(false); // Track if typing is complete
+  const [isVisible, setIsVisible] = useState(false);
+  const [isTyping, setIsTyping] = useState(true);
   const indexRef = useRef(0);
   const timeoutRef = useRef(null);
   const inputRef = useRef(null);
-  const sectionRef = useRef(null); // Ref for the About section
+  const sectionRef = useRef(null);
 
   // Function to get formatted date and time
   const getCurrentDateTime = () => {
@@ -31,7 +31,7 @@ I'm a Software Engineer with experience & strong foundation in <span class="high
 
 I'm graduating in Dec 2024 and am <span class="red">actively seeking a full-time software engineering position.</span> I am always eager to explore new opportunities for learning and growth. Feel free to reach out to me if you have any questions or just want to connect!
 
-                                                <span class="welcome">Welcome to my portfolio!</span>
+                                                <span class="welcome">¡bienvenida!</span>
 
 Change Directory to Navigate: 
 cd Home
@@ -41,19 +41,23 @@ cd Projects
 
   // Typing effect
   useEffect(() => {
-    if (!isVisible || hasTyped) return; // Only start typing when the section is visible and typing has not already happened
+    if (!isVisible || !isTyping) return; // Only start typing when the section is visible and typing is not complete
 
     setDisplayedText('');
     indexRef.current = 0;
-    const typingSpeed = 3; // Adjust the typing speed if necessary
+    const typingSpeed = 5; // Adjust the typing speed if necessary
 
     const typeText = () => {
-      if (indexRef.current < fullText.length - 1) {
+      if (indexRef.current < fullText.length) {
         setDisplayedText((prev) => prev + fullText[indexRef.current]);
         indexRef.current++;
         timeoutRef.current = setTimeout(typeText, typingSpeed);
       } else {
-        setHasTyped(true); // Set typing complete after it's done
+        setIsTyping(false); // Set typing complete after it's done
+        // Set focus to the input when typing is complete
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
       }
     };
 
@@ -62,7 +66,7 @@ cd Projects
     return () => {
       clearTimeout(timeoutRef.current);
     };
-  }, [fullText, isVisible, hasTyped]);
+  }, [fullText, isVisible, isTyping]);
 
   // Intersection Observer to detect when About section is visible
   useEffect(() => {
@@ -70,25 +74,23 @@ cd Projects
       (entries) => {
         const entry = entries[0];
         setIsVisible(entry.isIntersecting); // Set isVisible based on visibility
-
-        // Conditionally focus on the input only when the About section is visible
-        if (entry.isIntersecting && inputRef.current) {
-          inputRef.current.focus();
-        }
       },
       { threshold: 0.5 } // Adjust this value as needed (50% visibility)
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  
+    const currentSectionRef = sectionRef.current; // Copy the current ref value
+  
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
-
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) { // Use the copied value in cleanup
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
+  
 
   // Function to handle user input with Enter key navigation
   const handleKeyDown = (e) => {

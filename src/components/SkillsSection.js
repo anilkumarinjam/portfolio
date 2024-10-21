@@ -35,57 +35,45 @@ export default function Skills() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShowSkills(true);
-          observer.disconnect(); // Stop observing once the element is in view
+          observer.disconnect();
         }
       },
-      { threshold: 0.9 } // Trigger when 10% of the component is visible
+      { threshold: 0.9 }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+    const currentSkillsRef = skillsRef.current; // Store ref value
+
+    if (currentSkillsRef) {
+      observer.observe(currentSkillsRef);
     }
 
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
+      if (currentSkillsRef) { // Use the stored value in the cleanup
+        observer.unobserve(currentSkillsRef);
       }
     };
   }, []);
 
-  useEffect(() => {
-    if (showSkills) {
-      const skillsBackground = skillsRef.current.querySelector('.skills-background');
-      const skillElements = skillsBackground.querySelectorAll('.skill-background-text');
-
-      // Randomize positions
-      skillElements.forEach(element => {
-        const x = Math.random() * (skillsBackground.offsetWidth - element.offsetWidth);
-        const y = Math.random() * (skillsBackground.offsetHeight - element.offsetHeight);
-
-        element.style.position = 'absolute'; // Set position to absolute
-        element.style.left = `${x}px`;
-        element.style.top = `${y}px`;
-      });
-    }
-  }, [showSkills]);
-
   return (
     <div className="skills-container" ref={skillsRef}>
-      <div className="skills-background">
-        {skills.map((skill, index) => (
-          <span 
-            key={index} 
-            className={`skill-background-text ${showSkills ? 'show' : ''}`}
-          >
-            {skill.name}
-          </span>
-        ))}
-      </div>
-      <h2 className={`skills-header ${showSkills ? 'show' : ''}`}>Check out my skills</h2>
-      <div className="skills-content">
-        <div className="icon-cloud">
+      <div className="skills-header">
+        <h2 className={`check ${showSkills ? 'show' : ''}`}>Check</h2>
+        <div className={`icon-cloud ${showSkills ? 'spin' : ''}`}>
           <IconCloud iconSlugs={skills.map(skill => skill.name.toLowerCase().replace(/\s+/g, ''))} />
         </div>
+        <h2 className={`out ${showSkills ? 'show' : ''}`}>out</h2>
+      </div>
+  
+      {/* New line for MY SKILLS */}
+      <h2 className={`skills-text ${showSkills ? 'show' : ''}`}>MY SKILLS</h2>
+  
+      <div className="rounded-skills-table">
+        {skills.map((skill, index) => (
+          <div key={index} className="skill-card">
+            <div className="icon">{skill.icon}</div>
+            <span>{skill.name}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,96 +1,104 @@
 .skills-container {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     padding: 40px;
-    height: 70vh; /* Adjust height as needed */
+    height: 100vh;
     width: 100vw;
     overflow: hidden;
+    background: url('../assets/skb.png'), linear-gradient(to right, #9974d0,#c7c7eb, #d8bfd8);
+    background-position-y: 39%;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+}
+  
+  .skills-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width:100%
   }
   
-  .skills-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    z-index: 2; /* Ensure content is above the background */
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 40px;
+  .check, .out, .skills-text {
+    font-size: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    font-weight: bold;
+    background: linear-gradient(to right, #480e9e, #d38f50, #d8bfd8); /* Gradient background */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+    margin: 0 10px; /* Add margin to reduce space */
+}
+  .check.show, .out.show {
+    opacity: 1;
+    transform: translateY(-80px);
+  }
+
+  .check.show{
+    margin-right: 8rem;
+  }
+  .out.show{
+    margin-left: -15rem;
+  }
+  .skills-text {
+    font-size: 3rem; /* Same as check and out */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    font-weight: bold;
+    color: white;
+    text-align: center; /* Center the MY SKILLS text */
+    margin-top: 60px; /* Add space above the skills text */
+  }
+  
+  .skills-text.show {
+    opacity: 1;
+    transform: translateY(-80px);
   }
   
   .icon-cloud {
-    flex: 1;
-    max-width: 50%; /* Adjust to make space for the text on the right */
-    margin-top: 0;
-    margin-left: 350px; /* Adjust spacing as needed */
-    position: relative; /* Ensure it has a proper stacking context */
-    z-index: 1; /* Ensure the icon cloud is above the background but below content */
+    margin: 0 20px; /* Adjust margin if needed */
+    display: flex; /* Added display: flex */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; 
+    /* flex-grow: 1; */
+    margin-left: -70px;
+    padding-left: -10px;
   }
   
-  .skills-header {
-    z-index: 3; /* Ensure header is above everything */
-    flex: 1;
+  /* Rounded Skills Table */
+  .rounded-skills-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    width: 80%;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: linear-gradient(to right,#d8bfd8, #e6e6fa);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-top: -70px;
+  }
+  
+  .skill-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    padding-left: 2rem;
-    font-size: 4rem; /* Adjust font size as needed */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 2s ease;
-    font-weight: bold; /* Make the font bold */
-    background: linear-gradient(to right, #f00, #00f); /* Apply gradient from red to blue */
-    -webkit-background-clip: text; /* Make background clip to text */
-    -webkit-text-fill-color: transparent; /* Make text color transparent for gradient effect */
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  
-  .skills-header.show {
-    opacity: 1;
-    transform: translateY(0);
+  .skill-card .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
-  
-  .skills-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, #05243c, #190119, #24045f, #530578, #2b3790);
-    opacity: 1;
-    z-index: 0; /* Keep background behind everything */
-    display: block;
-  }
-  
-  .skill-background-text {
-    position: absolute;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.1);
-    white-space: nowrap;
-    pointer-events: none;
-    animation: float 30s infinite;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  .skill-background-text.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(20px);
-    }
+
+  .rounded-skills-table :hover{
+    transform: scale(1.1);
   }
   

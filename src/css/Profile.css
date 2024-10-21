@@ -10,7 +10,7 @@
     height: 100vh;
     width: 100vw;
     padding-left: 15rem;
-    background: linear-gradient(to right, #9974d0,#c7c7eb, #d8bfd8);
+    background: linear-gradient(to bottom,#000014, #7d2dec, #d8bfd8);
   }
   /* background: linear-gradient(to bottom, #2b3790, #414caf, #6841b1, #e987e9, #9974d0);  */
 
@@ -23,6 +23,7 @@
     margin-right: 6rem;
     margin-left: 4rem;
   }
+
   
   .text-content {
     flex: 1;
@@ -41,7 +42,7 @@
   
   .text-content p {
     font-size: 1.2rem;
-    color: #905cd3;
+    color: #f8f4f4;
     margin-bottom: 1.5rem;
   }
   

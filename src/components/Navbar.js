@@ -1,31 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faProjectDiagram, faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faProjectDiagram, faEnvelope, faBars, faTimes, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import '../css/Navbar.css';
-import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [scrollingDown, setScrollingDown] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
 
-  // Toggle the menu on icon click
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
-  // Automatically close the menu when it is opened
+  // Handle scroll events
   useEffect(() => {
-    if (menuVisible) {
-      const handleScroll = () => setMenuVisible(false);
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [menuVisible]);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Check if scrolling down
+      if (currentScrollY > prevScrollY && currentScrollY > 100) {
+        setScrollingDown(true); // Hide hamburger when scrolling down
+      } else {
+        setScrollingDown(false); // Show hamburger when scrolling up
+      }
+
+      setPrevScrollY(currentScrollY); // Update previous scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollY]); // Add prevScrollY as a dependency
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div>
       {/* Animated Hamburger/X Icon */}
-      <div className={`menu-icon ${menuVisible ? 'open' : ''}`} onClick={toggleMenu}>
-        <FontAwesomeIcon icon={menuVisible ? faTimes : faBars} />
-      </div>
+      {!scrollingDown && (
+        <div className={`menu-icon ${menuVisible ? 'open' : ''}`} onClick={toggleMenu}>
+          <FontAwesomeIcon icon={menuVisible ? faTimes : faBars} />
+        </div>
+      )}
 
       {/* Navbar: only show when menuVisible is true */}
       {menuVisible && (
@@ -50,6 +68,13 @@ const Navbar = () => {
             </a>
           </div>
         </nav>
+      )}
+
+      {/* Scroll to top arrow icon positioned to the left bottom */}
+      {scrollingDown && (
+        <div className="scroll-arrow" onClick={scrollToTop}>
+          <FontAwesomeIcon icon={faArrowUp} />
+        </div>
       )}
     </div>
   );

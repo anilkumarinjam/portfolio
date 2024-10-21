@@ -19,16 +19,20 @@
 }
 
 .projects-container h2 {
+    writing-mode: vertical-rl; /* Makes the text vertical */
+    transform: translate(-50%, -50%); /* Center it vertically and horizontally */
+    margin-top: 9rem;
+    margin-left: -100px;
     font-family: 'Poppins', sans-serif;
     font-size: 3rem;
     font-weight: bold;
     text-align: left;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+    background: linear-gradient(45deg, #ff0000, #8f53d8, #010112);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     padding: 10px 0;
+    display: inline;
 }
 
 .projects-grid {
@@ -85,6 +89,11 @@
 
 .project-hover h3 {
     margin: 10px 0;
+    font-size: large;
+    font-weight: 1000;
+    background: linear-gradient(to right, #9974d0,#c7c7eb, #de5719);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .project-hover p {
@@ -97,8 +106,7 @@
     display: inline-block; /* Inline-block ensures the buttons stay side by side */
     padding: 10px 20px;
     margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
+    border-radius: 35px;
     background: linear-gradient(to right, #ff0000, #0000ff);
     color: white;
     text-decoration: none;
@@ -118,19 +126,23 @@
 
 
 /* Specific styles for the first, second, and third cards */
-.project-card:nth-child(3) {
-    margin-top: -100px;
-    width: 140vw;
-    height: 30vh;
-}
-
-.project-card:nth-child(2) {
-    margin-top: 400px;
-    width: 140vw;
-    margin-left: 50px;
-}
 
 .project-card:nth-child(1) {
-    width: 130vw;
-    height: 40vh;
+    width: 75vw;
+    height: 65vh;
+    border-radius: 64px;
+    margin-top: -300px;
 }
+.project-card:nth-child(2) {
+    width: 110vw;
+    margin-left: 30px;
+    border-radius: 34px;
+}
+.project-card:nth-child(3) {
+    margin-top: -350px;
+    width: 110vw;
+    height: 35vh;
+    margin-left: -400px;
+    border-radius: 34px;
+}
+

@@ -7,7 +7,7 @@ const ProfileSection = () => {
   return (
     <div className="profile-section">
       <div className="image-container">
-        <img src={profileImage} alt="Anil Kumar Injam" width="300" />
+        <img src={profileImage} alt="Anil Kumar Injam"/>
       </div>
       <div className="text-content">
         <h1>
