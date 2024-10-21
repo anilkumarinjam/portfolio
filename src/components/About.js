@@ -45,10 +45,10 @@ cd Projects
 
     setDisplayedText('');
     indexRef.current = 0;
-    const typingSpeed = 5; // Adjust the typing speed if necessary
+    const typingSpeed = 3; // Adjust the typing speed if necessary
 
     const typeText = () => {
-      if (indexRef.current < fullText.length) {
+      if (indexRef.current < fullText.length-1) {
         setDisplayedText((prev) => prev + fullText[indexRef.current]);
         indexRef.current++;
         timeoutRef.current = setTimeout(typeText, typingSpeed);

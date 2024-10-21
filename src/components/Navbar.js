@@ -5,6 +5,7 @@ import '../css/Navbar.css';
 
 const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [showScrollArrow, setShowScrollArrow] = useState(false);
   const [scrollingDown, setScrollingDown] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
@@ -16,12 +17,21 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-      // Check if scrolling down
-      if (currentScrollY > prevScrollY && currentScrollY > 100) {
-        setScrollingDown(true); // Hide hamburger when scrolling down
+      // Show the scroll arrow if the user is not at the top and not near the bottom
+      if (currentScrollY > 100 && currentScrollY + windowHeight < documentHeight) {
+        setShowScrollArrow(true);
       } else {
-        setScrollingDown(false); // Show hamburger when scrolling up
+        setShowScrollArrow(false);
+      }
+
+      // Hide hamburger when scrolling down and show when scrolling up, but also when the arrow is shown
+      if (currentScrollY > prevScrollY) {
+        setScrollingDown(true);
+      } else {
+        setScrollingDown(false);
       }
 
       setPrevScrollY(currentScrollY); // Update previous scroll position
@@ -29,7 +39,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollY]); // Add prevScrollY as a dependency
+  }, [prevScrollY]);
 
   // Scroll to top function
   const scrollToTop = () => {
@@ -39,7 +49,7 @@ const Navbar = () => {
   return (
     <div>
       {/* Animated Hamburger/X Icon */}
-      {!scrollingDown && (
+      {!scrollingDown && !showScrollArrow && ( // Hide when scrolling down or if arrow is visible
         <div className={`menu-icon ${menuVisible ? 'open' : ''}`} onClick={toggleMenu}>
           <FontAwesomeIcon icon={menuVisible ? faTimes : faBars} />
         </div>
@@ -70,8 +80,8 @@ const Navbar = () => {
         </nav>
       )}
 
-      {/* Scroll to top arrow icon positioned to the left bottom */}
-      {scrollingDown && (
+      {/* Scroll to top arrow icon */}
+      {showScrollArrow && (
         <div className="scroll-arrow" onClick={scrollToTop}>
           <FontAwesomeIcon icon={faArrowUp} />
         </div>
