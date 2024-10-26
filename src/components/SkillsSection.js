@@ -38,17 +38,17 @@ export default function Skills() {
           observer.disconnect();
         }
       },
-      { threshold: 0.9 }
+      { threshold: 0.5 }
     );
 
-    const currentSkillsRef = skillsRef.current; // Store ref value
+    const currentSkillsRef = skillsRef.current;
 
     if (currentSkillsRef) {
       observer.observe(currentSkillsRef);
     }
 
     return () => {
-      if (currentSkillsRef) { // Use the stored value in the cleanup
+      if (currentSkillsRef) {
         observer.unobserve(currentSkillsRef);
       }
     };
@@ -57,15 +57,11 @@ export default function Skills() {
   return (
     <div className="skills-container" ref={skillsRef}>
       <div className="skills-header">
-        <h2 className={`check ${showSkills ? 'show' : ''}`}>Check</h2>
-        <div className={`icon-cloud ${showSkills ? 'spin' : ''}`}>
+        <h2 className={`check ${showSkills ? 'show' : ''}`}>Check out my skills</h2>
+        <div className={`icon-cloud`}>
           <IconCloud iconSlugs={skills.map(skill => skill.name.toLowerCase().replace(/\s+/g, ''))} />
         </div>
-        <h2 className={`out ${showSkills ? 'show' : ''}`}>out</h2>
       </div>
-  
-      {/* New line for MY SKILLS */}
-      <h2 className={`skills-text ${showSkills ? 'show' : ''}`}>MY SKILLS</h2>
   
       <div className="rounded-skills-table">
         {skills.map((skill, index) => (
