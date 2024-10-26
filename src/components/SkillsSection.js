@@ -1,7 +1,8 @@
 import IconCloud from "./magicui/IconCloud";
 import "../css/skills.css";
 import { FaReact, FaJava, FaHtml5, FaCss3Alt, FaAws, FaDocker, FaGit, FaJira, FaGithub, FaPython, FaJenkins } from "react-icons/fa";
-import { SiNginx, SiMysql, SiTestinglibrary, SiSpringboot, SiSpring } from "react-icons/si";
+import { SiApachekafka,SiNginx, SiMysql, SiTestinglibrary, SiSpringboot, SiSpring } from "react-icons/si";
+import {VscVscodeInsiders} from "react-icons/vsc";
 import { useEffect, useRef, useState } from "react";
 
 const skills = [
@@ -18,8 +19,8 @@ const skills = [
   { name: "Git", icon: <FaGit /> },
   { name: "Jira", icon: <FaJira /> },
   { name: "GitHub", icon: <FaGithub /> },
-  { name: "VS Code", icon: <FaReact /> },
-  { name: "Apache Kafka", icon: <FaReact /> },
+  { name: "VS Code", icon: <VscVscodeInsiders /> },
+  { name: "Apache Kafka", icon: <SiApachekafka /> },
   { name: "Jenkins", icon: <FaJenkins /> },
   { name: "Python", icon: <FaPython /> },
   { name: "Spring Boot", icon: <SiSpringboot /> },
@@ -35,10 +36,11 @@ export default function Skills() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShowSkills(true);
-          observer.disconnect();
+        } else {
+          setShowSkills(false); // Reset the skills display when out of view
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     const currentSkillsRef = skillsRef.current;
@@ -58,14 +60,19 @@ export default function Skills() {
     <div className="skills-container" ref={skillsRef}>
       <div className="skills-header">
         <h2 className={`check ${showSkills ? 'show' : ''}`}>Check out my skills</h2>
-        <div className={`icon-cloud`}>
-          <IconCloud iconSlugs={skills.map(skill => skill.name.toLowerCase().replace(/\s+/g, ''))} />
-        </div>
       </div>
-  
-      <div className="rounded-skills-table">
+
+      <div className={`icon-cloud`}>
+        <IconCloud iconSlugs={skills.map(skill => skill.name.toLowerCase().replace(/\s+/g, ''))} />
+      </div>
+
+      <div className={`rounded-skills-table`}>
         {skills.map((skill, index) => (
-          <div key={index} className="skill-card">
+          <div 
+            key={index} 
+            className={`skill-card ${showSkills ? 'animate' : ''}`} 
+            style={{ '--delay': index }} // Pass index for staggered animation
+          >
             <div className="icon">{skill.icon}</div>
             <span>{skill.name}</span>
           </div>

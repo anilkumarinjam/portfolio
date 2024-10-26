@@ -1,4 +1,4 @@
-import profileImage from '../assets/ai.png';
+import profileImage from '../assets/ai1.png';
 import resume from '../assets/Anil_Resume_Dev.pdf';
 import HyperText from './magicui/HyperText.js';
 import RainbowButton from "./magicui/RainbowButton.js";

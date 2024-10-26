@@ -12,7 +12,7 @@ export const cloudProps = {
       alignItems: "center",
       flexGrow: 1, // Allow it to grow and fill available space
       margin: '0 20px', // Space between text and icons
-      maxWidth: '800px', // Set a max width for the icon cloud
+      maxWidth: '250px', // Set a max width for the icon cloud
       width: '40%', // Ensure it takes the full width of the parent
     },
   },
