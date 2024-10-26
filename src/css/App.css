@@ -1,14 +1,2 @@
-.mobile-warning {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #333; /* Dark background */
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+
   

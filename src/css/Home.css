@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: flex-start;;
   overflow-x: hidden;
-  background: linear-gradient(to right, #090909, #310613);
+  /* background: linear-gradient(to right, #090909, #050505); */
+  background-color: rgb(240, 231, 231);
 }
 html, body {
   margin: 0;

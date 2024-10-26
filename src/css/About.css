@@ -1,122 +1,146 @@
 /* Container for the terminal window */
-.back{
+.back {
   background: linear-gradient(to right, #e6e6fa, #d8bfd8);
   height: 100vh;
   width: 100vw;
-  top:-200px;
+  top: -200px;
   overflow: hidden;
 }
+
 .terminal {
-    background-color: #1e1e1e;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    width: 100%;
-    max-width: 1100px;
-    margin: 50px auto;
-    border-radius: 18px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  width: 90%; /* Use percentage for responsive width */
+  max-width: 1100px; /* Limit maximum width */
+  margin: 50px auto; /* Center the terminal */
+  border-radius: 18px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.highlight {
+  color: #5143ba; /* Change this to the color you want */
+  font-weight: bold; /* Optional: makes the skills bold */
+}
+
+.welcome {
+  color: rgb(17, 225, 111);
+  font-size: large;
+  font-weight: 500;
+}
+
+.red {
+  color: rgb(239, 11, 11);
+}
+
+/* Terminal header with mac-style buttons */
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #323232;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.buttons span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.close-btn {
+  background-color: #ff5f56;
+}
+
+.minimize-btn {
+  background-color: #ffbd2e;
+}
+
+.maximize-btn {
+  background-color: #27c93f;
+}
+
+.input-box {
+  margin-top: 10px;
+  padding: 5px;
+  width: 50%; /* Responsive input box width */
+  max-width: 200px; /* Limit the maximum width */
+}
+
+.submit-btn {
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.terminal-title {
+  color: #ccc;
+  font-size: 18px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Terminal body for displaying text */
+.terminal-body {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 2;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap; /* Text wraps within the container */
+  overflow-wrap: break-word; /* Break long words if needed */
+}
+
+.input-line {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace; /* Terminal font */
+  color: #00ff00; /* Green color for terminal */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow-wrap: normal; /* Ensure input doesn't break */
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px; /* Width of the cursor */
+  height: 1em;
+  background-color: #00ff00; /* Color of the cursor */
+  animation: blink 1s step-end infinite; /* Blinking effect */
+}
+
+@keyframes blink {
+  50% {
+      background-color: transparent; /* Cursor disappears */
   }
-  .highlight {
-    color: #5143ba;; /* Change this to the color you want */
-    font-weight: bold; /* Optional: makes the skills bold */
-  }
-  .welcome{
-    color:rgb(17, 225, 111);
-    font-size: large;
-    font-weight: 500;
-  }
-  .red{
-    color:rgb(239, 11, 11);
-  }
-  /* Terminal header with mac-style buttons */
-  .terminal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #323232;
-  }
-  
-  .buttons {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .buttons span {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-  
-  .close-btn {
-    background-color: #ff5f56;
-  }
-  
-  .minimize-btn {
-    background-color: #ffbd2e;
-  }
-  
-  .maximize-btn {
-    background-color: #27c93f;
-  }
-  .input-box {
-    margin-top: 10px;
-    padding: 5px;
-    width: 200px;
-  }
-  
-  .submit-btn {
-    padding: 5px 10px;
-    margin-left: 5px;
-  }
-  
-  .terminal-title {
-    color: #ccc;
-    font-size: 18px;
-    text-align: center;
-    flex-grow: 1;
-  }
-  
-  /* Terminal body for displaying text */
-  .terminal-body {
-    padding: 20px;
-    font-size: 16px;
-    line-height: 2;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-  
-  pre {
-    margin: 0;
-    white-space: pre-wrap; /* Text wraps within the container */
-    overflow-wrap: break-word; /* Break long words if needed */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .terminal {
+      width: 95%; /* Increase width for smaller screens */
+      margin: 20px auto; /* Reduce margin */
   }
 
-  .input-line {
-    display: inline-block;
-    font-family: 'Courier New', Courier, monospace; /* Terminal font */
-    color: #00ff00; /* Green color for terminal */
-    white-space: nowrap; /* Prevent wrapping */
-    overflow-wrap: normal; /* Ensure input doesn't break */
-    margin-left: 5px;
-    vertical-align: bottom;
+  .input-box {
+      width: 80%; /* Make input box wider on smaller screens */
   }
-  
-  .cursor {
-    display:inline-block;
-    width: 2px; /* Width of the cursor */
-    height: 1em;
-    background-color: #00ff00; /* Color of the cursor */
-    animation: blink 1s step-end infinite; /* Blinking effect */
+
+  .terminal-title {
+      font-size: 16px; /* Adjust title font size */
   }
-  
-  @keyframes blink {
-    50% {
-      background-color: transparent; /* Cursor disappears */
-    }
+
+  .terminal-body {
+      font-size: 14px; /* Adjust body font size */
   }
-  
-  
-  
+}
