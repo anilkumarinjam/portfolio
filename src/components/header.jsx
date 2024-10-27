@@ -45,7 +45,7 @@ const Header = () => {
             window.scrollTo(0, 0);
           }}>
           <img
-            src={logo} // your logo comes here
+            src={logo}
             alt="logo"
             className="sm:w-[50px] sm:h-[50px] w-[45px] h-[45px] object-contain"
           />

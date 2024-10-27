@@ -1,27 +1,28 @@
 /* Container for the terminal window */
 .back {
-  background: linear-gradient(to right, #e6e6fa, #d8bfd8);
-  min-height: 100vh; /* Allow it to grow with content */
+  background-image: url('../assets/whitebg.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  min-height: 100vh; 
   width: 100vw;
-  padding-top: 20px; /* Add some padding */
   overflow: hidden;
 }
 
 .terminal {
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: #a8a2a2;
+  color: #0d0d0d;
   font-family: 'Courier New', Courier, monospace;
-  width: 90%; /* Use percentage for responsive width */
-  max-width: 1100px; /* Limit maximum width */
-  margin: 50px auto; /* Center the terminal */
+  width: 90%;
+  max-width: 1100px; 
+  margin: 50px auto; 
   border-radius: 18px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
 .highlight {
-  color: #5143ba; /* Change this to the color you want */
-  font-weight: bold; /* Optional: makes the skills bold */
+  color: #5143ba; 
+  font-weight: bold; 
 }
 
 .welcome {
@@ -70,8 +71,8 @@
 .input-box {
   margin-top: 10px;
   padding: 5px;
-  width: 50%; /* Responsive input box width */
-  max-width: 200px; /* Limit the maximum width */
+  width: 50%; 
+  max-width: 200px; 
 }
 
 .submit-btn {
@@ -97,50 +98,50 @@
 
 pre {
   margin: 0;
-  white-space: pre-wrap; /* Text wraps within the container */
-  overflow-wrap: break-word; /* Break long words if needed */
+  white-space: pre-wrap; 
+  overflow-wrap: break-word; 
 }
 
 .input-line {
   display: inline-block;
   font-family: 'Courier New', Courier, monospace; /* Terminal font */
-  color: #00ff00; /* Green color for terminal */
-  white-space: nowrap; /* Prevent wrapping */
-  overflow-wrap: normal; /* Ensure input doesn't break */
+  color: #00ff00; 
+  white-space: nowrap; 
+  overflow-wrap: normal;
   margin-left: 5px;
   vertical-align: bottom;
 }
 
 .cursor {
   display: inline-block;
-  width: 2px; /* Width of the cursor */
+  width: 2px; 
   height: 1em;
-  background-color: #00ff00; /* Color of the cursor */
-  animation: blink 1s step-end infinite; /* Blinking effect */
+  background-color: #00ff00;
+  animation: blink 1s step-end infinite; 
 }
 
 @keyframes blink {
   50% {
-      background-color: transparent; /* Cursor disappears */
+      background-color: transparent; 
   }
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .terminal {
-      width: 95%; /* Increase width for smaller screens */
-      margin: 20px auto; /* Reduce margin */
+      width: 95%; 
+      margin: 20px auto; 
   }
 
   .input-box {
-      width: 80%; /* Make input box wider on smaller screens */
+      width: 80%; 
   }
 
   .terminal-title {
-      font-size: 16px; /* Adjust title font size */
+      font-size: 16px; 
   }
 
   .terminal-body {
-      font-size: 14px; /* Adjust body font size */
+      font-size: 14px; 
   }
 }

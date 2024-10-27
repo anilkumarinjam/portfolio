@@ -5,27 +5,27 @@ import { styles } from '../styles';
 import github from '../assets/github.png';
 import pineapple from '../assets/pineapple.png';
 import pineappleHover from '../assets/pineappleHover.png';
-import komikult from '../assets/komikult.png';
-import leaderboard from '../assets/leaderboard.png';
-import math from '../assets/math-magicians.png';
+import webcom from '../assets/webcom.jpeg';
+import taskpulse from '../assets/taskpulse.jpeg';
+import math from '../assets/api.png';
 import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
 const projects = [
   {
     id: 'project-1',
-    name: 'Webcom',
-    description: 'A Real-Time Chat Application built using WebSocket, Socket.io.',
-    image: komikult,
-    repo: 'https://github.com/anilkumarinjam/webcom',
-    demo: 'https://webcom-95hz.onrender.com/',
-  },
-  {
-    id: 'project-2',
     name: 'Task Pulse',
     description:
       'A full stack task management/todo application facilitating  users to create, edit, delete tasks and also view the tasks in a tabular view.',
-    image: leaderboard,
+    image: taskpulse,
     repo: 'https://github.com/anilkumarinjam/taskpulse',
     demo: 'https://taskpulse-5mb4.onrender.com/login',
+  },
+  {
+    id: 'project-2',
+    name: 'Webcom',
+    description: 'A Real-Time Chat Application built using WebSocket, Socket.io.',
+    image: webcom,
+    repo: 'https://github.com/anilkumarinjam/webcom',
+    demo: 'https://webcom-95hz.onrender.com/',
   },
   {
     id: 'project-3',

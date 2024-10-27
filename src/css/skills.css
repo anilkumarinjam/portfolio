@@ -2,158 +2,142 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh; /* Full height for desktop */
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   background: linear-gradient(to right, hsla(240, 0%, 41%, 0.981), #7e7eda00, hsla(240, 0%, 41%, 0.981));
   background-position-y: 39%;
   background-repeat: no-repeat;
   background-blend-mode: exclusion;
-  margin: 0; /* Ensure no margin to avoid overlap */
+  margin: 0;
 }
 
 .skills-header {
   display: flex;
-  flex-direction: column; /* Center elements vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center content */
-  margin-bottom: 20px; /* Adjust this if necessary */
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
   width: 100%;
-  position: absolute; /* Make header position absolute */
-  top: 50%; /* Center header vertically */
-  transform: translateY(-50%); /* Adjust for height */
-  z-index: 1; /* Ensure header is above skill cards */
+  z-index: 1;
 }
 
 .check {
-  font-size: 3rem; /* Default font size for larger screens */
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px);
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(-20px);
   transition: opacity 1s ease, transform 1s ease;
   font-weight: bold;
   background: linear-gradient(to right, #480e9e, #d38f50, #d8bfd8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0 0 20px; /* Maintain margin for spacing below */
+  margin: 0 0 0 1rem;
 }
 
-/* Show classes */
 .check.show {
   opacity: 1;
-  transform: translateY(-80px);
-  margin-top: 12rem;
+  transform: translateY(0);
 }
 
-/* Adjustments for the icon cloud */
-.icon-cloud {
-  position: absolute; /* Set position to absolute */
-  top: 20px; /* Position it at the top */
-  left: 20px; /* Position it at the left */
-  margin-bottom: 50px;
-  display: flex; /* Use flex for alignment */
-  align-items:center; /* Center icon vertically */
+.icon-o {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  margin: 0 0 0 5rem;
+  margin-right: -5rem;
+  vertical-align: middle;
+  margin-left: 0rem;
 }
 
-/* Rounded Skills Table */
 .rounded-skills-table {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Increased min width for larger cards */
-  gap: 35px;
-  width: 80%;
-  padding: 20px;
-  margin-top: 20px; /* Adjust margin for spacing */
-  z-index: 0; /* Ensure skills table is below header */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Reduced min-width for better fitting */
+  gap: 20px; /* Reduced gap to allow more space */
+  width: 90%; /* Adjusted width to ensure it fits in the viewport */
+  padding: 10px; /* Slightly reduced padding */
+  margin-top: 20px;
+  z-index: 0;
+  overflow-y: auto; /* Allows scrolling if content exceeds container height */
 }
 
-/* Skill card styles */
 .skill-card {
-  width: 150px; /* Increase width for larger cards */
-  height: 150px; /* Increase height for larger cards */
+  width: 100%; /* Takes full width within the grid cell */
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center icon and text */
-  background: rgb(27, 16, 33);
+  justify-content: center;
+  background:linear-gradient(to right, hsla(240, 0%, 41%, 0.981), #7e7eda00, hsla(240, 0%, 41%, 0.981));
   border-radius: 12px;
-  padding: 20px; /* Add padding for better appearance */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s; /* Add a transition for scaling effect */
-  animation: none; /* No animation by default */
-  opacity: 0; /* Initially hidden for animation */
+  padding: 15px; /* Adjusted padding to fit content */
+  box-shadow: 0 4px 8px rgba(189, 53, 53, 0.1);
+  transition: transform 0.2s;
+  animation: none;
+  opacity: 0;
 }
 
 .skill-card.animate {
-  animation: slide-in 0.5s forwards; /* Apply slide-in animation */
-  animation-delay: calc(0.1s * var(--delay)); /* Delay for staggered effect */
-  display: flex;
-  opacity: 1; /* Show the card */
+  animation: slide-in 0.5s forwards;
+  animation-delay: calc(0.1s * var(--delay));
+  opacity: 1;
 }
 
 @keyframes slide-in {
   from {
-    transform: translateX(-50px); /* Start from the left */
-    opacity: 0; /* Start as invisible */
+    transform: translateX(-50px);
+    opacity: 0;
   }
   to {
-    transform: translateX(0); /* Move to its original position */
-    opacity: 1; /* Fully visible */
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 .skill-card:hover {
-  transform: scale(1.3); /* Scale effect on hover */
+  transform: scale(1.1) !important; /* Reduced scale to prevent overflow */
+  transition: transform 0.2s ease; /* Ensure smooth scaling */
   opacity: 1;
-  color: red;
+  color: rgb(117, 152, 209);
 }
 
-/* Media Queries for Responsiveness */
+/* Media queries for responsive sizing */
 @media (max-width: 768px) {
-  .skills-container {
-    padding: 20px; /* Reduce padding on smaller screens */
-    height: auto; /* Allow container to adjust height based on content */
-    margin: 0; /* Remove margin to avoid gaps */
+  .check {
+    font-size: 2rem;
   }
-
-  .skills-header {
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: center; /* Center align */
-    top: 20%; /* Adjust top position for smaller screens */
-    transform: translateY(0); /* Reset transform */
+  .icon-o {
+    width: 2rem;
+    height: 2rem;
+    margin: 1.5rem 0 0 -2rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0.2rem;
   }
-
-  .check.show {
-    font-size: 2rem; /* Decrease font size for better readability */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-    margin-top: 12rem;
-  }
-
   .rounded-skills-table {
-    width: 100%; /* Make the skills table full width on small screens */
-    margin-top: 20px; /* Adjust margin */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
   }
-
   .skill-card {
-    padding: 8px; /* Reduce padding for smaller devices */
-    width: 120px; /* Adjust width for smaller devices */
-    height: 120px; /* Adjust height for smaller devices */
+    height: 130px;
   }
 }
 
-/* Extra small device adjustments */
 @media (max-width: 480px) {
-  .check.show {
-    font-size: 1.5rem; /* Further decrease font size for very small screens */
-    margin: 0; /* Ensure no margin */
-    margin-top: 12rem;
+  .check {
+    font-size: 1.5rem;
   }
-
+  .icon-o {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 1rem 0 0 -1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0.2rem;
+  }
+  .rounded-skills-table {
+    gap: 10px;
+  }
   .skill-card {
-    width: 100px; /* Reduce width */
-    height: 100px; /* Reduce height */
+    height: 110px;
   }
 }
