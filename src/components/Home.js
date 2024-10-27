@@ -26,7 +26,7 @@ const Home = () => {
       <div id='skills'>
         <SkillsSection />
       </div>
-      <Projects/>
+      <div id='projects'><Projects/></div>
         <div
           className="bg-experience bg-cover bg-center bg-no-repeat 
             rounded-tl-[150px] rounded-br-[150px]">
@@ -36,7 +36,7 @@ const Home = () => {
             <Experience />
           </div>
         </div>
-        <Certifications/>
+        <div id='certs'><Certifications/></div>
         <div className="relative z-0">
           <Contact />
         </div>

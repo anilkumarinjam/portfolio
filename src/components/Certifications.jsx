@@ -12,7 +12,7 @@ const projects = [
     name: 'AWS',
     description: 'AWS Certified Cloud Practitioner.',
     image: awsccp,
-    verify: 'https://webcom-95hz.onrender.com/',
+    verify: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/704152d7f4b84152a3bbda2689e26eba',
   },
   {
     id: 'cert-2',

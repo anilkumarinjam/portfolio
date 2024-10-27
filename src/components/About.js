@@ -34,9 +34,9 @@ I'm graduating in Dec 2024 and am <span class="red">actively seeking a full-time
                                                 <span class="welcome">¡bienvenida!</span>
 
 Change Directory to Navigate: 
-cd Home
 cd Skills
 cd Projects
+cd Exp
 (base) user@mac ~ % `);
 
   // Typing effect
@@ -96,14 +96,14 @@ cd Projects
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault(); // Prevent default behavior
-      if (userInput === 'cd Home' || userInput === 'cd home') {
-        document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
-      } else if (userInput === 'cd Skills' || userInput === 'cd skills') {
+      if (userInput === 'cd Skills' || userInput === 'cd skills') {
         document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
       } else if (userInput === 'cd Projects' || userInput === 'cd projects') {
         document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      } else if (userInput === 'cd Exp' || userInput === 'cd exp') {
+        document.getElementById('exp').scrollIntoView({ behavior: 'smooth' });
       } else {
-        alert('Please enter a valid Directory (cd Home, cd Skills, cd Projects)');
+        alert('Please enter a valid Directory');
       }
       setUserInput(''); // Clear the input after submission
     }
