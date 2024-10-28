@@ -105,7 +105,7 @@ pre {
 .input-line {
   display: inline-block;
   font-family: 'Courier New', Courier, monospace; /* Terminal font */
-  color: #00ff00; 
+  color: #e20707; 
   white-space: nowrap; 
   overflow-wrap: normal;
   margin-left: 5px;
