@@ -119,7 +119,7 @@ import {VerticalTimeline,VerticalTimelineElement} from 'react-vertical-timeline-
                 ease-in-out"
                 onClick={() =>
                   window.open(
-                    'https://drive.google.com/file/d/141H2OvLkWBtzRXT6TmD6_PCdF9VJTgF7/view?usp=sharing',
+                    'https://drive.google.com/file/d/1lqA3rLK0vHnUKjzFQDQjgnF6-VzaNetj/view?usp=sharing',
                   )
                 }
                 onMouseOver={() => {
