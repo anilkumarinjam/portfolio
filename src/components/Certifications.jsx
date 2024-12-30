@@ -9,14 +9,14 @@ import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
 const projects = [
   {
     id: 'cert-1',
-    name: 'AWS',
+    name: 'AWS CCP CLF-C02!',
     description: 'AWS Certified Cloud Practitioner.',
     image: awsccp,
     verify: 'https://www.credly.com/badges/04bcdb86-657c-44c8-9018-8bba6f8eacd5/public_url',
   },
   {
     id: 'cert-2',
-    name: 'DSA',
+    name: 'AWS SAA-C03!',
     description: 'AWS Certified Solutions Architect - Associate.',
     image: awssaa,
     verify: 'https://www.credly.com/badges/99e1c2a0-2f1b-4835-8840-ba5c628d54d1/public_url',
