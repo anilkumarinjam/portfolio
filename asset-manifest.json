@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.ea3ee89c.css",
-    "main.js": "/portfolio/static/js/main.f8add92c.js",
+    "main.js": "/portfolio/static/js/main.afaeb773.js",
     "static/media/ai2.png": "/portfolio/static/media/ai2.2a7690a7ef947ddf0490.png",
     "static/media/awsccp.png": "/portfolio/static/media/awsccp.152a00f63d192af28932.png",
     "static/media/cognizant.png": "/portfolio/static/media/cognizant.9fd781e33aa544a5c7c1.png",
@@ -13,8 +13,8 @@
     "static/media/overcame-bold.woff": "/portfolio/static/media/overcame-bold.1cbb476d06fa64bc5ee2.woff",
     "static/media/beckman.otf": "/portfolio/static/media/beckman.488200807fbe24510023.otf",
     "static/media/whitebg.png": "/portfolio/static/media/whitebg.c89da4934004f0376cd2.png",
-    "static/media/awssaa.png": "/portfolio/static/media/awssaa.92b213dc03a1e70f3a59.png",
     "static/media/taskpulse.jpeg": "/portfolio/static/media/taskpulse.1176d1bdface517fbdfc.jpeg",
+    "static/media/awssaa.png": "/portfolio/static/media/awssaa.1ff59e8ac2dabb1f0e3f.png",
     "static/media/webcom.jpeg": "/portfolio/static/media/webcom.056be8abe3724ce1b27a.jpeg",
     "static/media/ai-black.png": "/portfolio/static/media/ai-black.ae06373e12d17b08ca46.png",
     "static/media/mova.otf": "/portfolio/static/media/mova.707cfc3dbae1078dc46e.otf",
@@ -22,10 +22,10 @@
     "static/media/github.png": "/portfolio/static/media/github.ed1c06d925fff0b57e32.png",
     "index.html": "/portfolio/index.html",
     "main.ea3ee89c.css.map": "/portfolio/static/css/main.ea3ee89c.css.map",
-    "main.f8add92c.js.map": "/portfolio/static/js/main.f8add92c.js.map"
+    "main.afaeb773.js.map": "/portfolio/static/js/main.afaeb773.js.map"
   },
   "entrypoints": [
     "static/css/main.ea3ee89c.css",
-    "static/js/main.f8add92c.js"
+    "static/js/main.afaeb773.js"
   ]
 }
