@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 import { styles } from '../styles';
 import awsccp from '../assets/awsccp.png';
-import dsajava from '../assets/dsajava.jpg';
+import awssaa from '../assets/awssaa.png';
 import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
 
 const projects = [
@@ -12,14 +12,14 @@ const projects = [
     name: 'AWS',
     description: 'AWS Certified Cloud Practitioner.',
     image: awsccp,
-    verify: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/704152d7f4b84152a3bbda2689e26eba',
+    verify: 'https://www.credly.com/badges/04bcdb86-657c-44c8-9018-8bba6f8eacd5/public_url',
   },
   {
     id: 'cert-2',
     name: 'DSA',
-    description: 'Data Structures and Algorithms using Java.',
-    image: dsajava,
-    verify: '#',
+    description: 'AWS Certified Solutions Architect - Associate.',
+    image: awssaa,
+    verify: 'https://www.credly.com/badges/99e1c2a0-2f1b-4835-8840-ba5c628d54d1/public_url',
   },
 ];
 
@@ -81,7 +81,7 @@ const Projects = () => {
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
           className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]">
-          These are my official certifications from various plaftforms and currently I'm working on  AWS Associate Solutions Architect certification.
+          These are my official active certifications.
         </motion.p>
       </div>
 
