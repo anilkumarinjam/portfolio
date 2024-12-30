@@ -9,4 +9,3 @@ TailwindCSS
 # Live Demo
 Click here to view the [Live](https://anilkumarinjam.github.io/portfolio) demo.
 
-### Theme and design inspired from @shaqdeff
