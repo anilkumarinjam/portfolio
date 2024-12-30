@@ -9,17 +9,17 @@ import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
 const projects = [
   {
     id: 'cert-1',
-    name: 'AWS Certified Cloud Practitioner.',
-    description: 'AWS CCP CLF-C02',
-    image: awsccp,
-    verify: 'https://www.credly.com/badges/04bcdb86-657c-44c8-9018-8bba6f8eacd5/public_url',
-  },
-  {
-    id: 'cert-2',
     name: 'AWS Certified Solutions Architect - Associate.',
     description: 'AWS SAA-C03',
     image: awssaa,
     verify: 'https://www.credly.com/badges/99e1c2a0-2f1b-4835-8840-ba5c628d54d1/public_url',
+  },
+  {
+    id: 'cert-2',
+    name: 'AWS Certified Cloud Practitioner.',
+    description: 'AWS CCP CLF-C02',
+    image: awsccp,
+    verify: 'https://www.credly.com/badges/04bcdb86-657c-44c8-9018-8bba6f8eacd5/public_url',
   },
 ];
 
